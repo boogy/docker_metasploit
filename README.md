@@ -13,10 +13,6 @@ For `metasploit` licence please read: [metasploit license](https://github.com/ra
 docker run -it --rm -v $PWD:/share boogy/metasploit
 ```
 
-```bash
-docker run -it --rm -p 443 -p 8443 -v $PWD:/share boogy/metasploit
-```
-
 * run a complete meterpreter handler with port mapping and filesystem share
 
 ```bash
@@ -26,7 +22,7 @@ docker run -it --rm -p 80 -p 8080 -p 443 -p 8443 -v $PWD:/share boogy/metasploit
 * run metasploit container with ports mapped
 
 ```bash
-docker run -it --rm -p 443 -p 8443 boogy/metasploit
+docker run -it --rm -p 443 -p 8443 -v $PWD:/share boogy/metasploit
 ```
 
 * http_version scanner
