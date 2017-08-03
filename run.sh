@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$1" == "metasploit" ]; then
+if [ "$1" == "msfconsole" ]; then
 
     # /etc/init.d/postgresql start
     msfdb init

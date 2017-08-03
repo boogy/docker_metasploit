@@ -6,9 +6,10 @@ ENV DEBIAN_FRONTEND noninteractive
 ADD ./run.sh /run.sh
 
 # Install metasploit
-RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
+RUN grep "kali-rolling main contrib non-free" /etc/apt/sources.list \
+    || echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 RUN apt-get -y update ; apt-get -y dist-upgrade ; apt-get -y install ruby metasploit-framework
 
 ENTRYPOINT ["/run.sh"]
 
-CMD ["metasploit"]
+CMD ["msfconsole"]
