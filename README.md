@@ -53,3 +53,5 @@ docker run -it --rm boogy/metasploit msfconsole -x "use exploit/windows/smb/psex
 
 ```bash
 docker run -it --rm boogy/metasploit msfconsole -x "use auxiliary/scanner/portscan/tcp; set RHOST 0.0.0.0/24; set THREADS 30; exploit -j"
+```
+
