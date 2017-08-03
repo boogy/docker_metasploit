@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ "$1" == "msfconsole" ]; then
+if [ "$1" == "start_msf" ]; then
 
     # /etc/init.d/postgresql start
     msfdb init
@@ -11,7 +11,6 @@ if [ "$1" == "msfconsole" ]; then
 
     # msfupdate
     msfconsole -L
-
 fi
 
 exec "$@"
