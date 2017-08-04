@@ -9,7 +9,11 @@ ADD ./run.sh /run.sh
 RUN grep "kali-rolling main contrib non-free" /etc/apt/sources.list \
     || echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 
-RUN apt-get -y update ; apt-get -y dist-upgrade ; apt-get -y install ruby metasploit-framework
+RUN apt-get -y update ; apt-get -y dist-upgrade ; apt-get -y install \
+    ruby \
+    metasploit-framework \
+    tmux \
+    vim
 
 ENTRYPOINT ["/run.sh"]
 CMD ["start_msf"]
