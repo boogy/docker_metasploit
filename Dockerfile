@@ -16,6 +16,12 @@ RUN apt-get -y update ; \
     tmux \
     vim
 
+RUN mkdir -p /templates \
+    && wget https://live.sysinternals.com/psfile.exe -O /templates/psfile.exe \
+    && wget https://live.sysinternals.com/psfile64.exe -O /templates/psfile64.exe \
+    && wget https://live.sysinternals.com/procexp.exe -O /templates/procexp.exe \
+    && wget https://live.sysinternals.com/procexp64.exe -O /templates/procexp64.exe
+
 ADD ./run.sh /run.sh
 
 ENTRYPOINT ["/run.sh"]
