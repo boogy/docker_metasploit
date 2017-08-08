@@ -22,8 +22,7 @@ case $1 in
     msfconsole*)
         # If we start a handler directly usualy we want the whole thing so start tmux
         start_tmux
-        tmux send-keys "msfdb init ; msfdb start ; apt-get update ; apt-get upgrade -y metasploit-framework" C-m
-        tmux send-keys "exec $@" C-m
+        tmux send-keys "msfdb init ; msfdb start ; apt-get update ; apt-get upgrade -y metasploit-framework; export TERM=xterm; exec $@" C-m
         tmux attach -t $SESSION
         ;;
     tmux*)
