@@ -25,5 +25,4 @@ RUN mkdir -p /templates \
 ADD ./run.sh /run.sh
 
 ENTRYPOINT ["/run.sh"]
-
 CMD ["start_msf"]
